@@ -22,7 +22,14 @@ $app->get ( '/clientes', function ($request, $response, $args) {
 	$retorno = array ();
 	
 	// Abrir conexão com banco de dados...
-	$conexao = new MySQLi ( "localhost", "root", "", "tcc" );
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	$server = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$db = substr($url["path"], 1);
+
+	$conexao = new mysqli($server, $username, $password, $db);
 	
 	// Validar se houve conexão...
 	if (! $conexao) {
@@ -64,7 +71,14 @@ $app->post ( '/clientes/cadastrar', function ($request, $response, $args) {
 	
 	$dados = $request->getParsedBody ();
 	// Abrir conexão com banco de dados...
-	$conexao = new MySQLi ( "localhost", "root", "", "tcc" );
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	$server = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$db = substr($url["path"], 1);
+
+	$conexao = new mysqli($server, $username, $password, $db);
 	
 	// Validar se houve conexão...
 	if (! $conexao) {
@@ -91,7 +105,14 @@ $app->delete ( '/clientes/deletar', function ($request, $response, $args) {
 	
 	$dados = $request->getParsedBody ();
 	// Abrir conexão com banco de dados...
-	$conexao = new MySQLi ( "localhost", "root", "", "tcc" );
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	$server = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$db = substr($url["path"], 1);
+
+	$conexao = new mysqli($server, $username, $password, $db);
 	
 	// Validar se houve conexão...
 	if (! $conexao) {
@@ -112,7 +133,14 @@ $app->put ( '/clientes/alterar', function ($request, $response, $args) {
 	
 	$dados = $request->getParsedBody ();
 	// Abrir conexão com banco de dados...
-	$conexao = new MySQLi ( "localhost", "root", "", "tcc" );
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	$server = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$db = substr($url["path"], 1);
+
+	$conexao = new mysqli($server, $username, $password, $db);
 	
 	// Validar se houve conexão...
 	if (! $conexao) {
@@ -132,7 +160,14 @@ $app->post ( '/autenticar', function ($request, $response, $args) {
 	
 	$dados = $request->getParsedBody ();
 	// Abrir conexão com banco de dados...
-	$conexao = new MySQLi ( "localhost", "root", "", "tcc" );
+	$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	$server = $url["host"];
+	$username = $url["user"];
+	$password = $url["pass"];
+	$db = substr($url["path"], 1);
+
+	$conexao = new mysqli($server, $username, $password, $db);
 	
 	// Validar se houve conexão...
 	if (! $conexao) {

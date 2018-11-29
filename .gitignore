@@ -1,2 +1,9 @@
 
 vendor
+/.project
+/composer
+/composer.bat
+/composer.phar
+/version.php
+/.settings
+/.buildpath
